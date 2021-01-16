@@ -1,7 +1,7 @@
 // Require dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/movieRoutes");
 
 // Set up express server
 const app = express();
