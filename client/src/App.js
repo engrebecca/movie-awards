@@ -1,5 +1,6 @@
 import Jumbotron from "./components/Jumbotron";
 import Searchbar from "./components/Searchbar";
+import MovieCard from "./components/MovieCard";
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Jumbotron />
       <Searchbar />
+      <MovieCard />
     </div>
   );
 }
