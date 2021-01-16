@@ -11,6 +11,11 @@ app.post("/nominate", async (req, res) => {
 })
 
 // Route to delete movie to db
+app.delete("/delete/:id", async (req, res) => {
+    let movieId = req.params.id;
+    await db.deleteOne({ _id: movieId });
+    res.send(`${movieId} deleted`)
+})
 
 // Route to get all movies from db
 
