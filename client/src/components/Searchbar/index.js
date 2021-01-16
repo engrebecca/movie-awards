@@ -7,7 +7,7 @@ const Searchbar = (props) => {
             <Form>
                 <FormGroup>
                     <Label for="movieTitle">Enter a movie title to select it for the Movie Awards nomination.</Label>
-                    <Input type="text" name="movieTitle" id="movieTitle" placeholder="Movie Title" />
+                    <Input value={props.search} onChange={props.inputChange} type="text" name="movieTitle" id="movieTitle" placeholder="Movie Title" />
                 </FormGroup>
                 <Button onClick={props.submit} type="submit">Search</Button>
             </Form>
