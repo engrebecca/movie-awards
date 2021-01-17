@@ -11,12 +11,12 @@ const MovieCard = (props) => {
             genre: movieGenre,
             poster: moviePoster
         }
-        let response = await API.nominate(movieNomination)
+        await API.nominate(movieNomination)
         props.reload();
     }
     return (
         < div >
-            <Card>
+            <Card className="border-0">
                 <img width="20%" src={props.movie.Poster} alt="Movie poster" className="image" />
                 <CardBody>
                     <CardTitle tag="h5">{props.movie.Title}</CardTitle>

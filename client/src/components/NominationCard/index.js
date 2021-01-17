@@ -6,7 +6,7 @@ import API from "../../utils/API";
 const MovieCard = (props) => {
     return (
         < div >
-            <Card>
+            <Card className="border-0">
                 <img width="20%" src={props.movie.poster} alt="Movie poster" className="image" />
                 <CardBody>
                     <CardTitle tag="h5">{props.movie.title}</CardTitle>

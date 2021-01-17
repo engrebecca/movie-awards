@@ -3,6 +3,8 @@ import Jumbotron from "./components/Jumbotron";
 import Searchbar from "./components/Searchbar";
 import MovieCard from "./components/MovieCard";
 import NominationCard from "./components/NominationCard";
+import Container from "./components/Container";
+import { Row, Col } from 'reactstrap';
 import './App.css';
 import API from "./utils/API";
 
@@ -49,24 +51,32 @@ function App() {
     <div className="App">
       <Jumbotron />
       <Searchbar inputChange={handleInputChange} search={search} formSubmit={handleFormSubmit} />
-      {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
-      { searchStatus ?
-        <MovieCard movie={movieResults} reload={loadNominatedMovies} /> :
-        <p>No results to display</p>
-      }
-      <div>
-        {
-          !nominatedMovies.length ?
-            <p>No movies nomiated yet</p> :
-            (<>{
-              nominatedMovies.map(movie => {
-                return (
-                  <NominationCard movie={movie} key={movie._id} />
-                )
-              })
-            }</>)
-        }
-      </div>
+      <Row>
+        <Col>
+          <Container>
+            {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
+            {searchStatus ?
+              <MovieCard movie={movieResults} reload={loadNominatedMovies} /> :
+              <p>No results to display</p>
+            }
+          </Container>
+        </Col>
+        <Col>
+          <Container>
+            {
+              !nominatedMovies.length ?
+                <p>No movies nomiated yet</p> :
+                (<>{
+                  nominatedMovies.map(movie => {
+                    return (
+                      <NominationCard movie={movie} key={movie._id} />
+                    )
+                  })
+                }</>)
+            }
+          </Container>
+        </Col>
+      </Row>
     </div>
   );
 }
