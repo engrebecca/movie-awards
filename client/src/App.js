@@ -9,6 +9,16 @@ function App() {
   const [search, setSearch] = useState("");
   const [movieResults, setMovieResults] = useState({});
   const [searchStatus, setSearchStatus] = useState(false);
+  const [nominatedMovies, setNominatedMovies] = useState([]);
+
+  useEffect(() => {
+    loadNominatedMovies();
+  }, [])
+
+  async function loadNominatedMovies() {
+    let movies = await API.getMovies();
+    setNominatedMovies(movies.data);
+  }
 
   // Function to track input change in searchbar
   const handleInputChange = e => {
