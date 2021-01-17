@@ -24,7 +24,6 @@ function App() {
   // Function to track input change in searchbar
   const handleInputChange = e => {
     setSearch(e.target.value);
-    console.log(search)
   };
 
   async function handleFormSubmit(e) {
@@ -52,7 +51,7 @@ function App() {
       <Searchbar inputChange={handleInputChange} search={search} formSubmit={handleFormSubmit} />
       {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
       { searchStatus ?
-        <MovieCard movie={movieResults} /> :
+        <MovieCard movie={movieResults} reload={loadNominatedMovies} /> :
         <p>No results to display</p>
       }
       <div>
@@ -61,9 +60,8 @@ function App() {
             <p>No movies nomiated yet</p> :
             (<>{
               nominatedMovies.map(movie => {
-                console.log(movie)
                 return (
-                  <NominationCard movie={movie} />
+                  <NominationCard movie={movie} key={movie._id} />
                 )
               })
             }</>)

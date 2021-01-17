@@ -12,7 +12,7 @@ const MovieCard = (props) => {
             poster: moviePoster
         }
         let response = await API.nominate(movieNomination)
-        console.log(response);
+        props.reload();
     }
     return (
         < div >
