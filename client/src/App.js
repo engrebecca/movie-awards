@@ -23,9 +23,13 @@ function App() {
     // If there is a movie input, search through the OMBD API
     API.search(search)
       .then(res => {
+        if (res.Error) {
+          throw new Error("No results found.")
+        }
         setMovieResults(res.data);
         console.log(res.data);
       })
+      .catch(err => console.log(err));
   };
 
   return (
@@ -33,7 +37,7 @@ function App() {
     <div className="App">
       <Jumbotron />
       <Searchbar inputChange={handleInputChange} search={search} formSubmit={handleFormSubmit} />
-      <MovieCard />
+      <MovieCard movie={movieResults} />
     </div>
   );
 }

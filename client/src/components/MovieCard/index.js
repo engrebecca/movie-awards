@@ -6,11 +6,11 @@ const MovieCard = (props) => {
     return (
         <div>
             <Card>
-                <img width="20%" src="https://www.limitedruns.com/media/cache/7e/6b/7e6b6743a7e45d096838abd67b2464e2.jpg" alt="Movie poster" className="image" />
+                <img width="20%" src={props.movie.Poster} alt="Movie poster" className="image" />
                 <CardBody>
-                    <CardTitle tag="h5">Card title</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">Year</CardSubtitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">Genre</CardSubtitle>
+                    <CardTitle tag="h5">{props.movie.Title}</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.Year}</CardSubtitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.Genre}</CardSubtitle>
                 </CardBody>
 
             </Card>
