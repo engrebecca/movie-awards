@@ -14,6 +14,7 @@ const MovieCard = (props) => {
         await API.nominate(movieNomination)
         props.reload();
     }
+
     return (
         < div >
             <Card className="border-0">
@@ -22,7 +23,12 @@ const MovieCard = (props) => {
                     <CardTitle tag="h5">{props.movie.Title}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.Year}</CardSubtitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.Genre}</CardSubtitle>
-                    <Button color="secondary" onClick={() => nominateMovie(props.movie.Title, props.movie.Year, props.movie.Genre, props.movie.Poster)}>Nominate</Button>
+                    {
+                        props.validate ?
+                            <Button color="secondary" onClick={() => nominateMovie(props.movie.Title, props.movie.Year, props.movie.Genre, props.movie.Poster)}>Nominate</Button> :
+                            <Button disabled color="secondary" onClick={() => nominateMovie(props.movie.Title, props.movie.Year, props.movie.Genre, props.movie.Poster)}>Nominate</Button>
+                    }
+
                 </CardBody>
             </Card>
         </div >
