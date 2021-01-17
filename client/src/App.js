@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Jumbotron from "./components/Jumbotron";
 import Searchbar from "./components/Searchbar";
 import MovieCard from "./components/MovieCard";
+import NominationCard from "./components/NominationCard";
 import './App.css';
 import API from "./utils/API";
 
@@ -52,8 +53,22 @@ function App() {
       {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
       { searchStatus ?
         <MovieCard movie={movieResults} /> :
-        <p></p>
+        <p>No results to display</p>
       }
+      <div>
+        {
+          !nominatedMovies.length ?
+            <p>No movies nomiated yet</p> :
+            (<>{
+              nominatedMovies.map(movie => {
+                console.log(movie)
+                return (
+                  <NominationCard movie={movie} />
+                )
+              })
+            }</>)
+        }
+      </div>
     </div>
   );
 }
