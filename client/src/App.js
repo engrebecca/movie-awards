@@ -16,25 +16,21 @@ function App() {
     console.log(search)
   };
 
-  function handleFormSubmit(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
     if (!search) {
       return;
     }
     // If there is a movie input, search through the OMBD API
-    API.search(search)
-      .then(res => {
-        // If there is a movie result from OMDB, display set search status to true, otherwise set to false
-        if (res.data.Response === "True") {
-          setSearchStatus(true);
-          setMovieResults(res.data);
-          console.log(res.data);
-        } else {
-          setSearchStatus(false);
-        }
-      })
-      .catch(err => console.log(err));
-
+    let res = await API.search(search)
+    // If there is a movie result from OMDB, display set search status to true, otherwise set to false
+    if (res.data.Response === "True") {
+      setSearchStatus(true);
+      setMovieResults(res.data);
+      console.log(res.data);
+    } else {
+      setSearchStatus(false);
+    }
     setSearch("");
   };
 
