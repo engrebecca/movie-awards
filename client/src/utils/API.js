@@ -15,5 +15,9 @@ export default {
     // Nominate and add a movie to the database
     nominate: function (movieData) {
         return axios.post("/nominate", movieData);
+    },
+    // Remove movie nomination from database
+    remove: function (id) {
+        return axios.delete(`/delete/${id}`)
     }
 };

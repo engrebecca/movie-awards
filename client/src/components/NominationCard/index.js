@@ -4,6 +4,11 @@ import "./style.css";
 import API from "../../utils/API";
 
 const MovieCard = (props) => {
+    // Function to remove movie from nomination list
+    async function removeNomination(id) {
+        await API.remove(id);
+        props.reload();
+    }
     return (
         < div >
             <Card className="border-0">
@@ -12,7 +17,7 @@ const MovieCard = (props) => {
                     <CardTitle tag="h5">{props.movie.title}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.year}</CardSubtitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{props.movie.genre}</CardSubtitle>
-                    <Button color="secondary">Remove</Button>
+                    <Button color="secondary" onClick={() => removeNomination(props.movie._id)} >Remove</Button>
                 </CardBody>
             </Card>
         </div >

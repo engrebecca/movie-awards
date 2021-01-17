@@ -79,7 +79,7 @@ function App() {
                 (<>{
                   nominatedMovies.map(movie => {
                     return (
-                      <NominationCard movie={movie} key={movie._id} />
+                      <NominationCard movie={movie} key={movie._id} reload={loadNominatedMovies} />
                     )
                   })
                 }</>)
