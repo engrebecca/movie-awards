@@ -4,6 +4,7 @@ import Searchbar from "./components/Searchbar";
 import MovieCard from "./components/MovieCard";
 import NominationCard from "./components/NominationCard";
 import Container from "./components/Container";
+import Banner from "./components/Banner";
 import { Row, Col } from 'reactstrap';
 import './App.css';
 import API from "./utils/API";
@@ -60,6 +61,11 @@ function App() {
 
     <div className="App">
       <Jumbotron />
+      {
+        nominatedMovies.length === 5 ?
+          <Banner /> :
+          <p></p>
+      }
       <Searchbar inputChange={handleInputChange} search={search} formSubmit={handleFormSubmit} />
       <Row>
         <Col lg="6">
