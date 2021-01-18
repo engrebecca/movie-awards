@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const OMDBurl = "http://www.omdbapi.com/?t="
+const OMDBurl = "https://www.omdbapi.com/?t="
 const APIkey = "&apikey=21cffc8d"
 
 export default {
