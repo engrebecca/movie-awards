@@ -76,7 +76,7 @@ function App() {
           <Container>
             {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
             {searchStatus ?
-              <MovieCard movie={movieResults} reload={loadNominatedMovies} validate={validateNomination} /> :
+              <MovieCard movie={movieResults} clearSearch={setSearchStatus} reload={loadNominatedMovies} validate={validateNomination} /> :
               <p>No results to display</p>
             }
           </Container>

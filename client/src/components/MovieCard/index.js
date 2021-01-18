@@ -13,6 +13,7 @@ const MovieCard = (props) => {
         }
         await API.nominate(movieNomination)
         props.reload();
+        props.clearSearch(false);
     }
 
     return (
