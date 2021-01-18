@@ -51,6 +51,10 @@ function App() {
           setValidateNomination(false);
         }
       }
+      // Validate if number of movies nominated, if already 5 disable nomination button
+      if (nominatedMovies.length === 5) {
+        setValidateNomination(false);
+      }
     } else {
       setSearchStatus(false);
     }
