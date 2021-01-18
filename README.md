@@ -43,7 +43,7 @@ The annual Movie Awards is coming up and we need your help to nominate movies! T
 5. To remove a movie from the nomination list, click the "Remove" button
 6. Once 5 movies are nominated, a green banner will confirm your nomination list is complete
 
-![Movie Awards](client/public/BeautyInsight.gif)
+![Movie Awards](client/public/movie_awards.gif)
 
 ## Code
 The below code demonstrates how a ternary operator is used for the nominated movie list. If no movies are nominated, it will render a p tag saying "No movies nominated yet". Otherwise, it will map through the nominated movies and display a card for each one.
