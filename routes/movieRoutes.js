@@ -19,7 +19,7 @@ app.delete("/delete/:id", async (req, res) => {
 
 // Route to get all movies from db
 app.get("/movies", async (req, res) => {
-    let movies = await db.find({});
+    let movies = await db.find({}).sort({ createdAt: -1 });
     res.json(movies);
 })
 
