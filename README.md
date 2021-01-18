@@ -7,7 +7,7 @@ The annual Movie Awards is coming up and we need your help to nominate movies! T
 ## Features
 * React is used to create the application and the user interface components
     * Multiple useState hooks are utilized to access and update the state of movie searches and OMDB search results
-    * A useEffect hook initially renders the page with any previously nominated movies from database
+    * A useEffect hook initially renders the page with any previously nominated movies from the database
     * useState hooks are also used for validation to determine if buttons should be disabled or components should be hidden
 * Mongoose used to query the MongoDB database
     * Route to nominate a movie
