@@ -4,7 +4,7 @@ const OMDBurl = "https://www.omdbapi.com/?t="
 const APIkey = "&apikey=21cffc8d"
 
 export default {
-    // Search for a movie from OMBD API
+    // Search for a movie from OMDB API
     search: function (movieQuery) {
         return axios.get(`${OMDBurl}${movieQuery}${APIkey}`)
     },

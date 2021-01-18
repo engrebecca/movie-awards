@@ -7,6 +7,7 @@ const MovieCard = (props) => {
     // Function to remove movie from nomination list
     async function removeNomination(id) {
         await API.remove(id);
+        // Reload the nomination section
         props.reload();
     }
     return (
