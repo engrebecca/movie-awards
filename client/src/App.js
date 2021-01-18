@@ -74,6 +74,7 @@ function App() {
       <Row>
         <Col lg="6">
           <Container>
+            <h3 className="mt-5 header">Search Results</h3>
             {/* If the search status is true display the results in a movie card component, otherwise display empty div*/}
             {searchStatus ?
               <MovieCard movie={movieResults} clearSearch={setSearchStatus} reload={loadNominatedMovies} validate={validateNomination} /> :
@@ -83,6 +84,7 @@ function App() {
         </Col>
         <Col lg="6">
           <Container>
+            <h3 className="mt-5 header">Nominated Movies</h3>
             {
               !nominatedMovies.length ?
                 <p>No movies nomiated yet</p> :
@@ -97,7 +99,7 @@ function App() {
           </Container>
         </Col>
       </Row>
-    </div>
+    </div >
   );
 }
 
